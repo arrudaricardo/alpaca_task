@@ -1,13 +1,15 @@
 import React,{useState, useEffect} from 'react'
 import style from '../css/SearchInput.module.css'
-import {fetchMovieByTitle} from '../util'
+import {fetchMovieByTitle, fetchMovieByID} from '../util'
 import AutoComplete from './AutoComplete'
+import MovieInfo from './MovieInfo'
 import searchIcon from '../img/search-solid.svg'
 
 export default function SearchInput() {
   const [userInput, setUserInput] = useState('')
   const [autoComplete, setAutoComplete] = useState(false)
   const [suggestions, setSuggestions] = useState([])
+  const [movieID, setMovieID] = useState()
 
   const handleUserInput = e => {
     setAutoComplete(true)
@@ -18,18 +20,30 @@ export default function SearchInput() {
     const movies = await fetchMovieByTitle(userInput)
     setSuggestions(movies)
   }
+  
   const handleSearch = () => {
-    setAutoComplete(false)
-    //TODO: display info and add enter key
-    return null
+    const movie = suggestions.filter(movie => movie.title === userInput)
+    if (movie[0]){
+      setAutoComplete(false)
+      setMovieID(movie[0].id)
+    }
   }
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+        handleSearch()
+    }
+  }
+
+  useEffect(()=> {
+   handleSearch()
+  },[movieID])
 
   useEffect(()=>{
     if (autoComplete) {
       handleAutoComplete()
     }
   }, [userInput])
-
 
 
   return (
@@ -42,6 +56,7 @@ export default function SearchInput() {
     placeholder="movie title" 
     maxLength="60" 
     type="text" 
+    onKeyDown={handleKeyDown}
     value={userInput} 
     className={style.searchField} 
     onChange={handleUserInput}
@@ -57,12 +72,14 @@ export default function SearchInput() {
     </div>
     { autoComplete &&
       <AutoComplete 
-      setAutoComplete={setAutoComplete}
+      setMovieID={setMovieID}
+      handleSearch={handleSearch}
       movies={suggestions} 
       userInput={userInput} 
-      setUserInput={setUserInput} 
+      setUserInput={setUserInput}
       />
     }
+    {movieID && <MovieInfo movieID={movieID}/>}
     </>
   )
 

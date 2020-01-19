@@ -1,13 +1,13 @@
 import React,{useState,useEffect} from 'react'
 import style from '../css/AutoComplete.module.css'
 
-export default function AutoComplete({ movies, setUserInput, userInput, setAutoComplete}) {
+export default function AutoComplete({ movies, setUserInput, userInput, setMovieID }) {
   const [hover, setHover] = useState({})
 
   const handleClick = (movie) => {
    return function() {
     setUserInput(movie.title)
-    setAutoComplete(false)
+    setMovieID(movie.id)
    } 
   }
 
@@ -18,9 +18,6 @@ export default function AutoComplete({ movies, setUserInput, userInput, setAutoC
   const handleMouseLeave = (id) => {
     setHover(obj => ({...obj, [id]: false }))
   }
-
-  // useEffect(()=> {
-  // },[hover])
 
   const uniqueTitle = (movies) => {
   const result = [];
@@ -39,17 +36,6 @@ export default function AutoComplete({ movies, setUserInput, userInput, setAutoC
   return (
     <div className={style.container}>
       {movies && uniqueTitle(movies).slice(0,4).sort((a,b)=> a.title.length - b.title.length).map((movie,i) => {
-
-        // if (movie.title === userInput && i === 0 && movie.overview.length > 0){
-        //   return (
-        //   <div id={movie.id} className={style.movieOverview}>Overview:{movie.overview.slice(0,80)}</div>
-        //   )
-        // }
-
-        if (movie.title === userInput){
-          return null
-          
-        }
 
         return (
           <div 
