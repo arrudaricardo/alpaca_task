@@ -1,0 +1,47 @@
+
+.container {
+  position: relative; 
+  display: inline-flex; 
+  flex-direction: row; 
+  align-items: flex-end;
+  width: 50%;
+  height: 100%;
+  margin:0 auto;
+  overflow: hidden;
+
+}
+
+.imageContainer {
+      width: 80px;
+      position:absolute;
+      top: 0;
+      right: 0;
+}
+
+.imageContainer :hover {
+  opacity: 0.7;
+  cursor: pointer; ;
+}
+
+.image { 
+  padding: 5px;
+  width:  80%;
+  position:absolute;
+  right: 0;
+  top: 0;
+}
+
+.searchField {
+  padding-right:80px;
+  border-radius: 1px;
+  font-size: 2rem;
+  width: 100%;
+  padding: 1rem;
+  border: 3px solid #5286f58c;
+  border-radius: 2px;
+}
+
+.searchField:focus {
+  outline: none;
+  border: 3px solid #3c5a9c7e;
+}

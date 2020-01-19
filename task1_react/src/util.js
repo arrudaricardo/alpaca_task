@@ -12,7 +12,7 @@ const parseMovieData = (respose) => {
 }
 
 export const fetchMovieByTitle = (movieTitle) => {
-  if (movieTitle === '') return []
+  if (movieTitle === '') return false 
   return(
   axios.get(moviedbURL(movieTitle))
   .then( response => parseMovieData(response))

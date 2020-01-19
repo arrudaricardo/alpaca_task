@@ -1,9 +1,8 @@
 import React,{useState, useEffect} from 'react'
-import style from '../css/AutoComplete.module.css'
+import style from '../css/SearchInput.module.css'
 import {fetchMovieByTitle} from '../util'
 import AutoComplete from './AutoComplete'
 import searchIcon from '../img/search-solid.svg'
-
 
 export default function SearchInput() {
   const [userInput, setUserInput] = useState('')
@@ -27,13 +26,15 @@ export default function SearchInput() {
 
 
   return (
+    <>
     <div className={style.container}>
-    <input placeholder="movie title" maxLength="50" type="text" value={userInput} className={style.searchField} onChange={handleUserInput} />
+    <input placeholder="movie title" maxLength="60" type="text" value={userInput} className={style.searchField} onChange={handleUserInput} />
     <div onClick={handleSearch} className={style.imageContainer}>
       <img className={style.image} src={searchIcon}/>
     </div>
-    <AutoComplete movies={suggestions} />
     </div>
+      <AutoComplete movies={suggestions} userInput={userInput} setUserInput={setUserInput} />
+    </>
   )
 
 }
