@@ -10,13 +10,13 @@
 }
 
 .movieOverview {
-  padding: 4px;
-  background-color: rgba(121, 109, 231, 0.425);
-
+  padding: 5px;
+  background-color: rgba(69, 113, 235, 0.521);
+  font-size: 1.2rem;
 }
 
-
-.listElement :hover {
+.listHover {
+  cursor: pointer; 
   opacity: 0.7;
-  font-size: 30rem;
+  font-size: 1.5rem;
 }
