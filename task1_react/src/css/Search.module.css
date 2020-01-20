@@ -4,3 +4,9 @@
   align-content: center;
   /* justify-content: center; */
 }
+.title{
+  text-align: center;
+  text-shadow: 2px 2px #2186c9;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

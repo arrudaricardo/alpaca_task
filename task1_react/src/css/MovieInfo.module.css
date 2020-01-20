@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin:0px 15rem 0px 15rem;
+}
+.image {
+  height: auto;
+  width: 10rem;
+}
+
+.overview {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  font-size: 1.1em;
+  font-family: Arial, Helvetica, sans-serif;
+}

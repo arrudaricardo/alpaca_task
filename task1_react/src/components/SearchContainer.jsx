@@ -7,7 +7,7 @@ export default function search(){
 
   return (
     <div className={style.container}>
-      <h1 style={{textAlign: 'center'}}>Movie Search:</h1>
+      <h1 className={style.title}>Movie Search:</h1>
     <SearchInput/>
     </div>
   )

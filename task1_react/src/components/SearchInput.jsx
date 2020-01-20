@@ -70,6 +70,7 @@ export default function SearchInput() {
       src={searchIcon}/>
     </div>
     </div>
+    <div style={{minHeight:'5.7rem'}}>
     { autoComplete &&
       <AutoComplete 
       setMovieID={setMovieID}
@@ -79,6 +80,7 @@ export default function SearchInput() {
       setUserInput={setUserInput}
       />
     }
+    </div>
     {movieID && <MovieInfo movieID={movieID}/>}
     </>
   )
