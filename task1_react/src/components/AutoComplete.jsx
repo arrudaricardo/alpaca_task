@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
 import style from '../css/AutoComplete.module.css'
 
 export default function AutoComplete({ movies, setUserInput, userInput, setMovieID }) {
@@ -41,7 +41,7 @@ export default function AutoComplete({ movies, setUserInput, userInput, setMovie
           <div 
           id={movie.id}
           onClick={handleClick(movie)} 
-          className={style.listElement, hover[movie.id]? style.listHover: ''}
+          className={hover[movie.id]? style.listHover: style.listElement}
           onMouseEnter={() => handleMouseEnter(movie.id)}
           onMouseLeave={() => handleMouseLeave(movie.id)}
           >

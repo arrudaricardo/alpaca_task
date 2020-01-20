@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import style from '../css/SearchInput.module.css'
-import {fetchMovieByTitle, fetchMovieByID} from '../util'
+import {fetchMovieByTitle} from '../util'
 import AutoComplete from './AutoComplete'
 import MovieInfo from './MovieInfo'
 import searchIcon from '../img/search-solid.svg'
@@ -22,7 +22,7 @@ export default function SearchInput() {
   }
   
   const handleSearch = () => {
-    const movie = suggestions.filter(movie => movie.title === userInput)
+    const movie = suggestions.filter(movie => movie.title.toLowerCase() === userInput.toLowerCase())
     if (movie[0]){
       setAutoComplete(false)
       setMovieID(movie[0].id)
@@ -66,6 +66,7 @@ export default function SearchInput() {
     className={style.imageContainer}
     >
       <img 
+      alt='search-icon'
       className={style.image} 
       src={searchIcon}/>
     </div>

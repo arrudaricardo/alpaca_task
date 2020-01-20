@@ -4,7 +4,7 @@
   display: inline-flex; 
   flex-direction: row; 
   align-items: flex-end;
-  width: 50%;
+  /* width: 50%; */
   height: 100%;
   margin:0 auto;
   overflow: hidden;

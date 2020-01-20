@@ -4,19 +4,11 @@ import style from '../css/MovieInfo.module.css'
 const getImgURL = (path) => `https://image.tmdb.org/t/p/original${path}`
 
 export default function MovieInfo({ movieID }) {
-
   const [movieData, setMovieData] = useState(null)
-
 
   useEffect(() => {
     fetchMovieByID(movieID).then(data => setMovieData(data))
   }, [movieID])
-
-
-  useEffect(() => {
-    console.log(movieData)
-  }, [movieData])
-
 
   return (<>
     {movieData &&

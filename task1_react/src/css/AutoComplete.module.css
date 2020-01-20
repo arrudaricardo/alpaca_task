@@ -7,16 +7,12 @@
 
 .listElement {
   cursor: pointer; ;
-}
-
-.movieOverview {
-  padding: 5px;
-  background-color: rgba(69, 113, 235, 0.521);
-  font-size: 1.2rem;
+  opacity: 0.6;
+  font-size: 0.9rem;
 }
 
 .listHover {
   cursor: pointer; 
-  opacity: 0.7;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  opacity: 0.9;
 }
