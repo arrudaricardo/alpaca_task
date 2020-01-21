@@ -16,12 +16,13 @@ export default function MovieInfo({ movieID }) {
         <h1 style={{textAlign:"center", margin: '0'}}>{movieData.title}</h1>
 
         {movieData.imdb_id &&
-          <a href={`https://www.imdb.com/title/${movieData.imdb_id}/`}>IMDB</a>
+          <a target="_blank" className={style.link} href={`https://www.imdb.com/title/${movieData.imdb_id}/`}>IMDB</a>
+
         }
         <div className={style.overview}>
         {movieData.overview ?
           <p>{movieData.overview}</p> :
-          <p>No overview</p>
+          <p>No information availible</p>
         }
         {movieData.poster_path &&
           <img className={style.image} src={getImgURL(movieData.poster_path)} alt="movie poster" />

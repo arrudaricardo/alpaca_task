@@ -1,17 +1,32 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin:0px 15rem 0px 15rem;
+  /* margin:0px 15rem 0px 15rem; */
+  margin:0px 20% 0px 20%;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 2px;
+  position: relative;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+
+
 .image {
-  height: auto;
+  height: 100%;
   width: 10rem;
 }
 
 .overview {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   text-align: left;
   font-size: 1.1em;
   font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.link {
+  width: fit-content;
 }

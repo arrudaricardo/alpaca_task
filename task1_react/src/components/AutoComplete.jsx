@@ -39,7 +39,7 @@ export default function AutoComplete({ movies, setUserInput, userInput, setMovie
 
         return (
           <div 
-          id={movie.id}
+          key={movie.id}
           onClick={handleClick(movie)} 
           className={hover[movie.id]? style.listHover: style.listElement}
           onMouseEnter={() => handleMouseEnter(movie.id)}

@@ -50,9 +50,9 @@ export default function SearchInput() {
     <>
     <div className={style.container}>
     <input 
-    autocorrect="off" 
-    autocapitalize="off" 
-    spellcheck="false"
+    autoCorrect="off" 
+    autoCapitalize="off" 
+    spellCheck="false"
     placeholder="movie title" 
     maxLength="60" 
     type="text" 
