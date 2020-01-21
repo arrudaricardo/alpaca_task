@@ -1,4 +1,0 @@
-[build]
-  base = "task1_react/"
-  publish = "task1_react/build/"
-  command = "yarn build"
