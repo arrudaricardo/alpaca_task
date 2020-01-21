@@ -1,6 +1,7 @@
 {
   "name": "task1_react",
   "version": "0.1.0",
+  "author": {"name": "Ricardo de Arruda", "email": "settiricardo@gmail.com" },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

@@ -45,7 +45,6 @@ export default function SearchInput() {
     }
   }, [userInput])
 
-
   return (
     <>
     <div className={style.container}>

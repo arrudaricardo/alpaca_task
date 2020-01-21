@@ -2,7 +2,6 @@ import React from 'react'
 import SearchInput from './SearchInput'
 import style from '../css/Search.module.css'
 
-
 export default function search(){
 
   return (
